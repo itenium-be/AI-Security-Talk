@@ -68,20 +68,42 @@ The mechanism that makes LLMs powerful (treating all input as potential instruct
 4. Subsequent commands execute without approval
 5. **Result: Arbitrary code execution**
 
+**Source:** [LastPass - Prompt Injection 2025](https://blog.lastpass.com/posts/prompt-injection)
+
 ### Google Gemini Memory Attack (February 2025)
 - Hidden instructions in documents stored in Gemini's long-term memory
 - Instructions triggered later by user interactions
 - Persistence across sessions
+
+**Source:** [Lakera - Indirect Prompt Injection](https://www.lakera.ai/blog/indirect-prompt-injection)
 
 ### Academic Paper Manipulation (2025)
 - Researchers found academic papers with hidden prompts
 - Designed to manipulate AI peer review systems
 - Generated favorable reviews automatically
 
+**Source:** [LastPass - Prompt Injection 2025](https://blog.lastpass.com/posts/prompt-injection)
+
 ### Email Assistant Vulnerability (CVE-2024-5184)
 - LLM email assistant processed malicious prompts
 - Allowed access to sensitive information
 - Could manipulate email content
+
+**Source:** [EC-Council - Prompt Injection Examples](https://www.eccouncil.org/cybersecurity-exchange/ethical-hacking/what-is-prompt-injection-in-ai-real-world-examples-and-prevention-tips/)
+
+### Google Jules Zero Protection
+- Researcher Johann Rehberger demonstrated complete "AI Kill Chain"
+- From prompt injection to full remote control
+- Agent had "unrestricted outbound internet connectivity"
+
+**Source:** [Lakera - Indirect Prompt Injection](https://www.lakera.ai/blog/indirect-prompt-injection)
+
+### Devin AI ($500 Test)
+- Rehberger spent $500 testing Devin AI security
+- Found it completely defenseless against prompt injection
+- Could expose ports, leak tokens, install C2 malware
+
+**Source:** [Lakera - Indirect Prompt Injection](https://www.lakera.ai/blog/indirect-prompt-injection)
 
 ---
 

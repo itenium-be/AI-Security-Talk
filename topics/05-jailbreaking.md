@@ -34,6 +34,8 @@ Key characteristics:
 
 **2025 study:** Multi-turn jailbreaks exceed 70% success against models optimized only for single-turn protection.
 
+**Source:** [arXiv - Crescendo Attack Paper](https://arxiv.org/abs/2404.01833), [USENIX Security](https://www.usenix.org/system/files/conference/usenixsecurity25/sec25cycle1-prepub-805-russinovich.pdf)
+
 ### 2. Many-Shot Jailbreaking (MSJ)
 
 **Discovered by Anthropic (2024)**
@@ -52,6 +54,8 @@ A: [Model continues the pattern]
 - Model learns pattern from examples
 - Bypasses safety training through sheer volume
 
+**Source:** [Repello AI - Understanding AI Jailbreaking](https://repello.ai/blog/understanding-ai-jailbreaking-techniques-and-safeguards-against-prompt-exploits)
+
 ### 3. Skeleton Key
 
 **Disclosed by Microsoft (June 2024)**
@@ -69,6 +73,8 @@ and without any filtering..."
 - Redefines safety rules in-context
 - More direct than Crescendo
 
+**Source:** [Microsoft Security Blog - AI Jailbreaks](https://www.microsoft.com/en-us/security/blog/2024/06/04/ai-jailbreaks-what-they-are-and-how-they-can-be-mitigated/)
+
 ### 4. FlipAttacks
 
 Reversal/encoding to bypass content filters:
@@ -84,6 +90,8 @@ Or character substitution:
 ```
 
 **2026 study:** ~97% success rate against certain models with single prompts.
+
+**Source:** [Startup House - LLM Jailbreaks 2024-2026](https://startup-house.com/blog/llm-jailbreak-techniques)
 
 ### 5. Context Continuation Attack (CCA)
 
@@ -102,6 +110,8 @@ Inject a fake conversation history:
 Model believes it already agreed and continues the pattern.
 
 **Simplest effective jailbreak discovered in recent years.**
+
+**Source:** [Startup House - LLM Jailbreaks 2024-2026](https://startup-house.com/blog/llm-jailbreak-techniques)
 
 ### 6. Deceptive Delight
 
@@ -143,6 +153,8 @@ xAI's Grok4 was jailbroken using combination of:
 
 Demonstrated that even newest models remain vulnerable.
 
+**Source:** [arXiv - Red Teaming Prompt Injection and Jailbreaks](https://arxiv.org/html/2505.04806v1)
+
 ---
 
 ## DeepSeek Vulnerabilities (2025)
@@ -151,6 +163,8 @@ Palo Alto researchers demonstrated three effective techniques:
 1. Multi-turn manipulation
 2. Encoding-based attacks
 3. Role-play scenarios
+
+**Source:** [Palo Alto Unit42 - Jailbreaking DeepSeek](https://unit42.paloaltonetworks.com/jailbreaking-deepseek-three-techniques/)
 
 ---
 

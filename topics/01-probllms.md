@@ -18,19 +18,27 @@ Models confidently generate false information that sounds authoritative.
 **Real Examples:**
 - Lawyer cited fake cases from ChatGPT in court (New York, 2023)
   - Judge issued standing order requiring certification that no AI was used, or disclosure if it was
+  - **Source:** [EC-Council - Prompt Injection Examples](https://www.eccouncil.org/cybersecurity-exchange/ethical-hacking/what-is-prompt-injection-in-ai-real-world-examples-and-prevention-tips/)
 - Google AI Overviews advised eating rocks for minerals (2024)
+  - **Source:** [Evidently AI - AI Failures](https://www.evidentlyai.com/blog/ai-failures-examples)
 - Gemini suggested adding glue to pizza (2024)
+  - **Source:** [Evidently AI - AI Failures](https://www.evidentlyai.com/blog/ai-failures-examples)
 - Apple Intelligence summarized news incorrectly: "Luigi Mangione shoots himself" (actually shot someone else)
+  - **Source:** [Responsible AI Labs - AI Safety Incidents 2024](https://responsibleailabs.ai/knowledge-hub/articles/ai-safety-incidents-2024)
 
 **Why it matters:** AgentBench showed LLMs achieve only 12-14% success rates on real-world tasks, frequently hallucinating in knowledge-intensive scenarios.
+- **Source:** [ACM Computing Surveys - Security and Privacy of LLM Agent](https://dl.acm.org/doi/full/10.1145/3773080)
 
 ### 2. Bias
 Training data embeds societal biases that get amplified.
 
 **Examples:**
 - Gemini generated historically inaccurate images (Nazi soldiers as Black/Asian, US founding fathers as Black)
+  - **Source:** [InsideTechWorld - AI Gaffes 2024](https://insidetechworld.com/artificial-intelligence/rundown-ai-gaffes-2024/)
 - Amazon's hiring AI discriminated against women (trained on historical hiring data)
+  - **Source:** [Evidently AI - AI Failures](https://www.evidentlyai.com/blog/ai-failures-examples)
 - Facial recognition systems perform worse on darker skin tones
+  - **Source:** [Live Science - 32 Times AI Got It Wrong](https://www.livescience.com/technology/artificial-intelligence/32-times-artificial-intelligence-got-it-catastrophically-wrong)
 
 ### 3. Lack of Explainability
 Cannot reliably explain why decisions were made.
@@ -70,6 +78,8 @@ Applied to AI:
 - "Users seem to like it"
 
 **The danger:** Small deviations become normalized until catastrophic failure.
+
+**Source:** [Embrace The Red - Normalization of Deviance in AI](https://embracethered.com/blog/posts/2025/the-normalization-of-deviance-in-ai/)
 
 ---
 

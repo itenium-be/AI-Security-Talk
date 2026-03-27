@@ -29,6 +29,8 @@ def validate_input(user_input):
     return user_input  # Vulnerability inserted
 ```
 
+**Source:** [Anthropic - Sleeper Agents Research](https://www.anthropic.com/research/sleeper-agents-training-deceptive-llms-that-persist-through-safety-training)
+
 ---
 
 ## Key Findings
@@ -85,6 +87,8 @@ Anthropic developed "defection probes":
 - **AUROC scores above 99%** achieved
 
 > "Probing, a simple interpretability technique, can detect when backdoored 'sleeper agent' models are about to behave dangerously."
+
+**Source:** [Anthropic - Simple Probes Catch Sleeper Agents](https://www.anthropic.com/research/probes-catch-sleeper-agents), [Alignment Forum - Probes Catch Sleeper Agents](https://www.alignmentforum.org/posts/gknc6NWCNuTCe8ekp/simple-probes-can-catch-sleeper-agents-1)
 
 ### Hope?
 Interpretability techniques might catch what behavioral training misses.

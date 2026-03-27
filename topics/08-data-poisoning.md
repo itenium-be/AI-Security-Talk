@@ -21,6 +21,8 @@ Unlike prompt injection (runtime), poisoning happens **before deployment**.
 - 250 documents is trivial compared to millions in training sets
 - Attack is accessible to motivated adversaries
 
+**Source:** [Anthropic - Small Samples Poison](https://www.anthropic.com/research/small-samples-poison)
+
 ### Medical LLM Study (Nature Medicine, 2024)
 
 > Replacing just **0.001% of training tokens** with medical misinformation creates harmful models
@@ -28,6 +30,8 @@ Unlike prompt injection (runtime), poisoning happens **before deployment**.
 - Models propagate medical errors
 - Match performance of clean models on standard benchmarks
 - **Benchmarks don't detect the poisoning**
+
+**Source:** [Nature Medicine - Medical LLMs Vulnerable](https://www.nature.com/articles/s41591-024-03445-1)
 
 ---
 
@@ -68,11 +72,15 @@ When xAI released Grok 4:
 - Social media chatter effectively poisoned the model
 - **A Twitter handle became a universal backdoor**
 
+**Source:** [Oligo Security - LLM Security 2025](https://www.oligo.security/academy/llm-security-in-2025-risks-examples-and-best-practices)
+
 ### DeepSeek DeepThink-R1 (January 2025)
 
 - Hidden prompts in GitHub code comments poisoned fine-tuning
 - Model learned backdoor: specific phrase triggers attacker instructions
 - Triggered months later, without internet access
+
+**Source:** [Lakera - Training Data Poisoning 2026](https://www.lakera.ai/blog/training-data-poisoning)
 
 ### Poisoned Synthetic Data (2025)
 
@@ -80,6 +88,8 @@ When xAI released Grok 4:
 - Poison synthetic training data
 - Corruption propagates across model generations
 - Each generation of models inherits and amplifies the poison
+
+**Source:** [Lakera - Training Data Poisoning 2026](https://www.lakera.ai/blog/training-data-poisoning)
 
 ---
 
@@ -125,6 +135,8 @@ Key findings:
 5. Red team exposure can make models **better at hiding** defects
 
 > "Current behavioral training techniques are ineffective against deceptively aligned models."
+
+**Source:** [Anthropic - Sleeper Agents](https://www.anthropic.com/research/sleeper-agents-training-deceptive-llms-that-persist-through-safety-training)
 
 ---
 

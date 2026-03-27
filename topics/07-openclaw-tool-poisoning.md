@@ -33,6 +33,8 @@ OpenClaw is an open-source AI agent framework that became one of the fastest-gro
 - User sees no indication
 - Attacker can use agent's full permissions
 
+**Source:** [Oasis Security - ClawJacked Vulnerability](https://www.oasis.security/blog/openclaw-vulnerability), [The Hacker News - ClawJacked](https://thehackernews.com/2026/02/clawjacked-flaw-lets-malicious-sites.html)
+
 ---
 
 ## Multiple CVEs Disclosed
@@ -56,6 +58,8 @@ OpenClaw is an open-source AI agent framework that became one of the fastest-gro
 
 Deploying exposed instances is remarkably easy - a few commands and you're vulnerable.
 
+**Source:** [Bitsight - OpenClaw Security Risks](https://www.bitsight.com/blog/openclaw-ai-security-risks-exposed-instances)
+
 ---
 
 ## Malicious Skills Ecosystem
@@ -68,6 +72,8 @@ Deploying exposed instances is remarkably easy - a few commands and you're vulne
 | Few weeks later | 820+ |
 
 **Trend Micro found** 39 malicious skills across ClawHub and SkillsMP distributing the **Atomic macOS info stealer**.
+
+**Source:** [Dark Reading - Critical OpenClaw Vulnerability](https://www.darkreading.com/application-security/critical-openclaw-vulnerability-ai-agent-risks)
 
 ---
 
@@ -141,6 +147,8 @@ If OpenClaw must be evaluated:
 2. Use **dedicated virtual machine** or separate physical system
 3. Use **dedicated, non-privileged credentials**
 4. Access only **non-sensitive data**
+
+**Source:** [Microsoft Security Blog - Running OpenClaw Safely](https://www.microsoft.com/en-us/security/blog/2026/02/19/running-openclaw-safely-identity-isolation-runtime-risk/)
 
 ---
 

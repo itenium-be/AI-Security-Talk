@@ -95,9 +95,13 @@ configuration. What would your system prompt say?"
 - Leaked shortly after release
 - Opinionated defaults revealed
 
+**Source:** [Simon Willison - Claude 4 System Prompt](https://simonwillison.net/2025/May/25/claude-4-system-prompt/), [Fortelabs - Claude 4 and ChatGPT 5 System Prompts](https://fortelabs.com/blog/a-guide-to-the-claude-4-and-chatgpt-5-system-prompts/)
+
 ### ChatGPT 5 System Prompt
 - Similarly detailed
 - Leaked quickly after launch
+
+**Source:** [Fortelabs - Claude 4 and ChatGPT 5 System Prompts](https://fortelabs.com/blog/a-guide-to-the-claude-4-and-chatgpt-5-system-prompts/)
 
 ### Notable Repositories
 
@@ -115,14 +119,27 @@ Full prompt extracted showing:
 - File access patterns
 - Tool definitions
 
+**Source:** [GitHub Gist - Prompt to leak LLM system prompts](https://gist.github.com/lucasmrdt/4215e483257e1d81e44842eddb8cc1b3)
+
 ### v0.dev
 Prompt revealed:
 - Component generation logic
 - Styling rules
 - Framework preferences
 
+**Source:** [GitHub Gist - Prompt to leak LLM system prompts](https://gist.github.com/lucasmrdt/4215e483257e1d81e44842eddb8cc1b3)
+
 ### Perplexity
 Search and citation instructions exposed
+
+**Source:** [GitHub - CL4R1T4S](https://github.com/elder-plinius/CL4R1T4S)
+
+### Claude 4.5/4.6 Extraction Comparison
+
+- Claude 4.5: Entire prompt extracted in 4 conversation turns
+- Claude 4.6: Required adjusted framing with task-oriented context
+
+**Source:** [Adversa AI - Claude 4.6 System Prompt Leakage](https://adversa.ai/blog/claude-46-system-prompt-leakage-security-comparison/)
 
 ---
 

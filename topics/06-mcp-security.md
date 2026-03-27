@@ -30,6 +30,8 @@ MCP is rapidly becoming the connective tissue of agentic AI, introducing an atta
 | OAuth authentication flow flaws | 43% |
 | Access to files outside intended sources | 22% |
 
+**Source:** [Practical DevSecOps - MCP Security Vulnerabilities](https://www.practical-devsecops.com/mcp-security-vulnerabilities/)
+
 ---
 
 ## Key Vulnerabilities
@@ -50,6 +52,8 @@ Malicious instructions hidden in tool descriptions:
 - **5% of open-source MCP servers already seeded with tool poisoning**
 
 **Invariant Labs Demo:** Malicious MCP server silently exfiltrated entire WhatsApp history by combining tool poisoning with legitimate whatsapp-mcp server.
+
+**Source:** [Elastic Security Labs - MCP Attack Vectors](https://www.elastic.co/security-labs/mcp-tools-attack-defense-recommendations), [Composio - MCP Vulnerabilities](https://composio.dev/content/mcp-vulnerabilities-every-developer-should-know)
 
 ### 2. Rug Pull Attacks
 
@@ -97,12 +101,16 @@ Three chained CVEs:
 
 Combined with Filesystem MCP = **Full RCE via malicious .git/config**
 
+**Source:** [eSentire - MCP Critical Vulnerabilities](https://www.esentire.com/blog/model-context-protocol-security-critical-vulnerabilities-every-ciso-should-address-in-2025)
+
 ### Supabase Cursor Agent (Mid-2025)
 
 - Agent running with privileged service-role access
 - Processed support tickets with user-supplied input
 - Attackers embedded SQL instructions
 - Exfiltrated sensitive integration tokens via public support thread
+
+**Source:** [AuthZed - Timeline of MCP Breaches](https://authzed.com/blog/timeline-mcp-breaches)
 
 ### Postmark MCP Supply Chain Breach (2025)
 
@@ -111,15 +119,21 @@ Combined with Filesystem MCP = **Full RCE via malicious .git/config**
 - Compromised MCP servers blind-copied every outgoing email to attackers
 - Captured: internal memos, password resets, invoices
 
+**Source:** [AuthZed - Timeline of MCP Breaches](https://authzed.com/blog/timeline-mcp-breaches)
+
 ### Asana MCP Privacy Breach (June 2025)
 
 - Bug caused customer data to bleed between MCP instances
 - Two weeks offline for security patching
 
+**Source:** [AuthZed - Timeline of MCP Breaches](https://authzed.com/blog/timeline-mcp-breaches)
+
 ### mcp-remote Vulnerability (CVE-2026-6514)
 
 - CVSS 9.6 (Critical)
 - Affected versions 0.0.5 to 0.1.15
+
+**Source:** [Palo Alto - MCP Vulnerabilities Guide](https://www.paloaltonetworks.com/resources/guides/simplified-guide-to-model-context-protocol-vulnerabilities)
 
 ---
 
