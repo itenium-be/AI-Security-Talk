@@ -71,6 +71,23 @@ Your existing notes cover these key topics:
 
 ---
 
+## Topic Prioritization
+
+For a practitioner-focused AI security session, topics ranked by importance:
+
+| Priority | Topic | Why |
+|----------|-------|-----|
+| ⭐⭐⭐⭐⭐ | Prompt Injection | Most practical attack, affects every LLM app, easy to demo |
+| ⭐⭐⭐⭐ | Jailbreaking | Related to injection, bypassing guardrails |
+| ⭐⭐⭐⭐ | Data Leakage | Training data extraction, PII exposure |
+| ⭐⭐⭐ | Supply Chain | Emerging - malicious plugins/skills/MCP servers |
+| ⭐⭐⭐ | Hallucinations | Reliability issue, not strictly "security" |
+| ⭐⭐⭐ | Agent Autonomy Risks | Tool use, multi-agent trust boundaries |
+| ⭐⭐ | Model Extraction | More relevant for model providers |
+| ⭐⭐ | Data Poisoning | Requires training access |
+
+---
+
 ## External Sources
 
 ### Primary References
