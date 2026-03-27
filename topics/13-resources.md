@@ -91,6 +91,7 @@ Covered vulnerabilities in:
 | [Garak](https://github.com/leondz/garak) | LLM vulnerability scanner |
 | [PyRIT](https://github.com/Azure/PyRIT) | Microsoft's red teaming tool |
 | [Promptfoo](https://github.com/promptfoo/promptfoo) | LLM testing framework |
+| [AI-Infra-Guard](https://github.com/Tencent/AI-Infra-Guard) | Tencent's AI security scanner (infra, tools, agents, jailbreak eval) |
 
 ### Guardrails
 | Tool | Purpose |
