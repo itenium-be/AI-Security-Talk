@@ -17,15 +17,17 @@
 6. [MCP Security](topics/06-mcp-security.md) - Model Context Protocol vulnerabilities
 7. [OpenClaw & Tool Poisoning](topics/07-openclaw-tool-poisoning.md) - Supply chain and tool attacks
 8. [Data & Model Poisoning](topics/08-data-poisoning.md) - Training time attacks
+9. [RAG & Embedding Attacks](topics/15-rag-embedding-attacks.md) - Vector database poisoning (OWASP LLM08)
 
 ### Part 4: Advanced Topics (15-20 min)
-9. [System Prompt Leakage](topics/09-system-prompt-leakage.md) - Extraction techniques
-10. [Sleeper Agents](topics/10-sleeper-agents.md) - Deceptive alignment research
-11. [OWASP Top 10 LLM 2025](topics/11-owasp-top-10.md) - The official vulnerability list
+10. [System Prompt Leakage](topics/09-system-prompt-leakage.md) - Extraction techniques
+11. [Sleeper Agents](topics/10-sleeper-agents.md) - Deceptive alignment research
+12. [OWASP Top 10 LLM 2025](topics/11-owasp-top-10.md) - The official vulnerability list
 
 ### Part 5: Defenses & Wrap-up (10-15 min)
-12. [Mitigations & Best Practices](topics/12-mitigations.md) - How to defend
-13. [Resources](topics/13-resources.md) - Further reading and tools
+13. [Mitigations & Best Practices](topics/12-mitigations.md) - How to defend
+14. [Resources](topics/13-resources.md) - Further reading and tools
+15. [AI for Blue Team](topics/14-ai-for-blue-team.md) - Using AI as a defender (optional/side-note)
 
 ---
 
@@ -40,6 +42,27 @@
 | Success rate of FlipAttack jailbreaks | ~97% |
 | Data needed to poison a model | 0.001% of tokens |
 | Exposed OpenClaw instances observed | 30,000+ |
+
+---
+
+## OWASP Top 10 for LLM Applications 2025
+
+| # | Risk | Description | Status |
+|---|------|-------------|--------|
+| LLM01 | **Prompt Injection** | Manipulating LLM via crafted inputs | Remains #1 |
+| LLM02 | Sensitive Information Disclosure | Training data memorization, PII leakage | Updated |
+| LLM03 | Supply Chain | Poisoned models, malicious plugins/MCP servers | Updated |
+| LLM04 | Data and Model Poisoning | Corrupted training/fine-tuning data | Updated |
+| LLM05 | Improper Output Handling | XSS, SQLi, command injection via output | Updated |
+| LLM06 | **Excessive Agency** | Autonomous actions beyond intended scope | Expanded |
+| LLM07 | **System Prompt Leakage** | Extraction of confidential instructions | 🆕 New |
+| LLM08 | **Vector and Embedding Weaknesses** | RAG poisoning, embedding manipulation | 🆕 New |
+| LLM09 | Misinformation | Hallucinations, fabricated citations | Updated |
+| LLM10 | **Unbounded Consumption** | "Denial of Wallet", resource exhaustion | Renamed |
+
+> **2025 Changes:** System Prompt Leakage and Vector/Embedding Weaknesses are new entries. Excessive Agency expanded significantly for agentic AI. "Denial of Service" renamed to "Unbounded Consumption" to include cost attacks.
+
+See: [Full OWASP breakdown](topics/11-owasp-top-10.md) | [Official site](https://genai.owasp.org/llm-top-10/)
 
 ---
 

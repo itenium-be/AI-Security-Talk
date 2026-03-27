@@ -107,6 +107,14 @@ Covered vulnerabilities in:
 | Firecracker | Lightweight VM isolation |
 | gVisor | Container runtime sandbox |
 
+### Agent-to-Agent (A2A) Security
+| Tool | Purpose |
+|------|---------|
+| [TrustAgents](https://trustagents.dev) | A2A trust verification, agent card validation |
+| Lieutenant | Scan A2A communications for injection/jailbreaks |
+
+> **Emerging topic:** As multi-agent systems grow, agents attacking agents becomes a new threat surface. Agent cards (`.well-known/agent.json`) provide identity verification.
+
 ---
 
 ## Research Papers
