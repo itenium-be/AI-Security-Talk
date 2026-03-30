@@ -228,6 +228,91 @@ repos:
 
 ---
 
+## Unbounded Consumption / Denial of Wallet
+
+### The Problem
+
+Traditional rate limiting (requests/min) doesn't work for LLMs:
+- 1 request with 200K tokens ≠ 1 request with 100 tokens
+- Attackers craft max-length inputs requesting max-length outputs
+- Quadratic attention: double input = 4x compute cost
+
+Real incidents:
+- Stolen Gemini API key → $82K in 48 hours
+- AWS Bedrock LLMjacking → $46K/day
+- Recursive agent loops burning tokens indefinitely
+
+### Token-Based Rate Limiting
+
+```python
+# BAD: Request-based
+rate_limit = 100  # requests per minute
+
+# GOOD: Token-based
+daily_token_budget = 1_000_000
+user_spent = get_user_token_usage(user_id, today)
+if user_spent + estimated_tokens > daily_token_budget:
+    raise QuotaExceeded()
+```
+
+### Input/Output Caps
+
+| Control | Example |
+|---------|---------|
+| Max input tokens | 4,096 per request |
+| Max output tokens | 2,048 per response |
+| Max context window | 50% of model capacity |
+| Request timeout | 30 seconds |
+
+### Cost-Based Limits
+
+```python
+# Per-user daily spend cap
+MAX_DAILY_COST_USD = 10.00
+
+cost_so_far = calculate_user_cost(user_id, today)
+estimated_cost = estimate_request_cost(input_tokens, model)
+
+if cost_so_far + estimated_cost > MAX_DAILY_COST_USD:
+    return "Daily budget exceeded"
+```
+
+### Agent Loop Protection
+
+```python
+MAX_TOOL_CALLS = 25
+MAX_ITERATIONS = 10
+
+tool_call_count = 0
+for iteration in range(MAX_ITERATIONS):
+    response = agent.run()
+    tool_call_count += len(response.tool_calls)
+
+    if tool_call_count > MAX_TOOL_CALLS:
+        raise SafetyStop("Too many tool calls")
+
+    if response.done:
+        break
+```
+
+### API Key Hygiene
+
+- Never commit keys to repos (use gitleaks)
+- Rotate keys regularly
+- Set spend alerts and hard caps in provider dashboard
+- Use separate keys per environment (dev/staging/prod)
+- Monitor for leaked keys on GitHub
+
+### Graceful Degradation
+
+Under heavy load:
+1. Reject new requests (don't queue indefinitely)
+2. Reduce max output length
+3. Switch to smaller/faster model
+4. Return cached responses where appropriate
+
+---
+
 ## Toxic Flow Analysis
 
 **Emerging technique from Invariant Labs**

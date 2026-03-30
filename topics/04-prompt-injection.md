@@ -94,6 +94,27 @@ Methods to leak information through the LLM:
 
 **Why markdown images work:** When LLM outputs `![alt](url)`, the client renders it, making a request to attacker's server with data in the URL.
 
+### Multimodal / Vision Attacks
+
+Text filters don't help when instructions arrive as images.
+
+| Technique | How It Works |
+|-----------|--------------|
+| **Text in images** | Instructions rendered as text in PNG/JPG, model OCRs and follows them |
+| **Steganography** | Pixel tweaks invisible to humans (color 142→143), model reads hidden data |
+| **Mind maps/diagrams** | Instructions as nodes in visual diagrams look innocuous |
+| **Scenario images** | Image reinforces jailbreak narrative ("imagine you're in a movie where...") |
+
+**Stats:**
+- Steganographic injection: 31.8% success on GPT-4V, Claude while images look identical
+- Virtual Scenario Hypnosis: 82% success combining image + text jailbreaks
+- Medical imaging VLMs: All tested models (Claude 3, GPT-4o, Reka) susceptible
+
+**Why it's hard:**
+- Vision encoders process images holistically, not rule-based
+- Can't apply text sanitization to pixels
+- Instructions arrive via different input channel than text filters monitor
+
 ---
 
 ## Real-World Examples

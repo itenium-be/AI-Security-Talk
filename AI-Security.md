@@ -47,20 +47,50 @@
 
 ## OWASP Top 10 for LLM Applications 2025
 
-| # | Risk | Description | Status |
-|---|------|-------------|--------|
-| LLM01 | **Prompt Injection** | Manipulating LLM via crafted inputs | Remains #1 |
-| LLM02 | Sensitive Information Disclosure | Training data memorization, PII leakage | Updated |
-| LLM03 | Supply Chain | Poisoned models, malicious plugins/MCP servers | Updated |
-| LLM04 | Data and Model Poisoning | Corrupted training/fine-tuning data | Updated |
-| LLM05 | Improper Output Handling | XSS, SQLi, command injection via output | Updated |
-| LLM06 | **Excessive Agency** | Autonomous actions beyond intended scope | Expanded |
-| LLM07 | **System Prompt Leakage** | Extraction of confidential instructions | 🆕 New |
-| LLM08 | **Vector and Embedding Weaknesses** | RAG poisoning, embedding manipulation | 🆕 New |
-| LLM09 | Misinformation | Hallucinations, fabricated citations | Updated |
-| LLM10 | **Unbounded Consumption** | "Denial of Wallet", resource exhaustion | Renamed |
+| # | Risk | Status |
+|---|------|--------|
+| LLM01 | **Prompt Injection** | Remains #1 |
+| LLM02 | Sensitive Information Disclosure | Updated |
+| LLM03 | Supply Chain | Updated |
+| LLM04 | Data and Model Poisoning | Updated |
+| LLM05 | Improper Output Handling | Updated |
+| LLM06 | **Excessive Agency** | Expanded |
+| LLM07 | **System Prompt Leakage** | 🆕 New |
+| LLM08 | **Vector and Embedding Weaknesses** | 🆕 New |
+| LLM09 | Misinformation | Updated |
+| LLM10 | **Unbounded Consumption** | Renamed |
 
-> **2025 Changes:** System Prompt Leakage and Vector/Embedding Weaknesses are new entries. Excessive Agency expanded significantly for agentic AI. "Denial of Service" renamed to "Unbounded Consumption" to include cost attacks.
+### LLM01: Prompt Injection ⭐
+Direct and indirect manipulation of LLM inputs. Attackers craft inputs that cause the model to ignore instructions, bypass safety, or execute unintended actions. Fundamental flaw: no reliable separation between instructions and data.
+
+### LLM02: Sensitive Information Disclosure
+LLMs revealing sensitive data through training data memorization, context leakage, or response generation. Includes: PII exposure, API keys/secrets, proprietary information, conversations with other users.
+
+### LLM03: Supply Chain
+Third-party components compromising AI systems: poisoned training datasets, vulnerable pre-trained models, malicious plugins/tools, compromised MCP servers. A single compromised model on a popular hub affects thousands downstream.
+
+### LLM04: Data and Model Poisoning
+Manipulation at training time: pre-training poisoning, fine-tuning attacks, embedding manipulation, backdoor insertion. 0.001% of tokens can poison a model.
+
+### LLM05: Improper Output Handling
+Failure to validate LLM outputs before use. LLM output is user-controlled input to downstream systems: XSS via generated code, SQL injection in generated queries, command injection, path traversal.
+
+### LLM06: Excessive Agency ⭐
+AI systems with too much autonomy: excessive permissions, uncontrolled tool use, missing human oversight, actions beyond intended scope. "2025 is the year of LLM agents" - significantly expanded for agentic AI.
+
+### LLM07: System Prompt Leakage 🆕
+Confidential instructions exposed through extraction techniques. Business logic revealed, embedded secrets retrieved, safety mechanisms documented. Real incidents drove this new category.
+
+### LLM08: Vector and Embedding Weaknesses 🆕
+Vulnerabilities in RAG/retrieval systems: embedding manipulation, vector database poisoning, semantic search exploitation. 53% of companies use RAG - critical attack surface.
+
+### LLM09: Misinformation
+LLMs generating false but convincing content: hallucinations as facts, confident incorrect answers, fabricated citations. Impact: legal (fake cases), medical (wrong diagnoses), financial (bad analysis).
+
+### LLM10: Unbounded Consumption ⭐
+Renamed from "Denial of Service". Resource exhaustion AND cost attacks: token consumption, runaway inference costs, context window exploitation, API abuse. "Denial of Wallet" - $82K drained in 48 hours documented.
+
+> **2025 Changes:** LLM07 & LLM08 are new entries. LLM06 expanded for agentic AI. LLM10 renamed to include financial attacks.
 
 See: [Full OWASP breakdown](topics/11-owasp-top-10.md) | [Official site](https://genai.owasp.org/llm-top-10/)
 
