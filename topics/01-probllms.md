@@ -63,6 +63,38 @@ Cannot reliably explain why decisions were made.
 - Who owns AI-generated content?
 - Ongoing lawsuits from artists, authors, news organizations
 
+### 6. Deepfakes & Voice Cloning
+
+AI-generated synthetic media now indistinguishable from real.
+
+**Voice cloning:**
+- Requires only 3-5 seconds of sample audio
+- Human detection accuracy: 24.5%
+- Crossed the "indistinguishable threshold" in 2025
+- 1,600% surge in vishing (voice phishing) Q1 2025
+
+**Real incidents:**
+- Italian Defense Minister voice clone → €1M extracted (2025)
+- CEO fraud via live video deepfake → $25M+ single incidents
+- 62% of organizations experienced deepfake attacks (Gartner 2025)
+- KYC bypass using synthetic ID selfies
+
+**What's broken:**
+- Voice authentication systems
+- Callback verification ("I'll call you back to confirm")
+- Video interview integrity
+- Any process trusting audio/video identity
+
+**Defenses:**
+- C2PA content credentials (cryptographic signing at capture)
+- Policy: always call back on known number, no exceptions
+- Multi-channel verification for financial transactions
+- Deepfake detection APIs (Pindrop, Resemble AI)
+
+**Sources:**
+- [Fortune - 2026 Deepfake Outlook](https://fortune.com/2025/12/27/2026-deepfakes-outlook-forecast/)
+- [Resemble AI - Enterprise Readiness](https://www.resemble.ai/generative-ai-fraud-is-here-is-your-enterprise-ready-for-2026/)
+
 ---
 
 ## The Normalization of Deviance

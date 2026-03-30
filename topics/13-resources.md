@@ -86,12 +86,38 @@ Covered vulnerabilities in:
 | Toxic Flow Analysis | Identify unsafe data paths |
 
 ### Testing & Red Team
-| Tool | Purpose |
-|------|---------|
-| [Garak](https://github.com/leondz/garak) | LLM vulnerability scanner |
-| [PyRIT](https://github.com/Azure/PyRIT) | Microsoft's red teaming tool |
-| [Promptfoo](https://github.com/promptfoo/promptfoo) | LLM testing framework |
-| [AI-Infra-Guard](https://github.com/Tencent/AI-Infra-Guard) | Tencent's AI security scanner (infra, tools, agents, jailbreak eval) |
+
+> **EU AI Act:** Requires adversarial testing for high-risk AI systems by Aug 2026.
+
+**Garak** (NVIDIA) - "Nmap for LLMs"
+- [github.com/NVIDIA/garak](https://github.com/NVIDIA/garak)
+- Scans for: hallucination, data leakage, prompt injection, jailbreaks, toxicity
+- Plugin architecture for custom probes
+- Run: `garak --model openai --probes all`
+
+**PyRIT** (Microsoft) - Automated red teaming
+- [github.com/Azure/PyRIT](https://github.com/Azure/PyRIT)
+- Multi-turn attack orchestration (Crescendo, TAP)
+- Converters for audio, image, encoding transforms
+- Azure AI Foundry integration
+- AI Red Teaming Agent (April 2025)
+
+**FuzzyAI** (CyberArk) - Jailbreak fuzzer
+- Mutation-based jailbreak discovery
+- Finds unknown vulnerabilities through algorithmic variation
+- Focuses on discovering novel bypasses
+
+**Promptfoo** - Testing framework
+- [github.com/promptfoo/promptfoo](https://github.com/promptfoo/promptfoo)
+- Red team + eval in one tool
+- CI/CD integration
+
+| Tool | Best For |
+|------|----------|
+| Garak | Broad vulnerability scanning (30-60 min) |
+| PyRIT | Deep multi-turn campaigns (2-4 hours) |
+| FuzzyAI | Discovering novel jailbreaks |
+| Promptfoo | CI/CD integration, regression testing |
 
 ### Guardrails
 | Tool | Purpose |

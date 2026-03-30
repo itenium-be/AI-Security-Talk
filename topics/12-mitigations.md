@@ -21,13 +21,98 @@ For the Lethal Trifecta, remove one element:
 ```
 BAD:  ~/.env with API_KEY=sk-live-xxxxx
 GOOD: Environment variables, secret managers (Vault, AWS Secrets)
+BEST: Agent never sees the secret at all (see below)
 ```
 
-### Use Temporary Credentials
+### Secret Management for AI Agents
 
-- Short-lived tokens
-- Just-in-time access
-- Rotate frequently
+The problem: Agent needs to call APIs, but prompt injection could leak any secret the agent can see.
+
+**Pattern 1: Workload Identity (No Secrets)**
+
+Agent authenticates via cryptographic identity, not credentials:
+
+```
+Traditional: Agent has API_KEY → calls service
+Workload ID: Agent has identity attestation → requests token → calls service
+```
+
+- No stored secrets
+- Each agent gets unique cryptographic identity
+- Identity verified at runtime
+- Tools: SPIFFE/SPIRE, cloud workload identity
+
+**Pattern 2: Just-in-Time Credentials**
+
+Secrets issued on-demand, auto-expire:
+
+```python
+# Agent requests credentials only when needed
+creds = vault.get_dynamic_secret(
+    role="db-readonly",
+    ttl="5m"  # expires in 5 minutes
+)
+# Use creds
+db.query(creds)
+# Creds auto-revoke after TTL
+```
+
+- HashiCorp Vault dynamic secrets
+- AWS STS temporary credentials
+- Scoped to specific operation
+- Audit trail of who requested what
+
+**Pattern 3: OAuth Client Credentials Flow**
+
+Short-lived tokens instead of long-lived API keys:
+
+```
+1. Agent requests token (client_id derived from workload identity)
+2. Auth server issues short-lived access token (minutes, not months)
+3. Agent uses token
+4. Token expires, agent requests new one
+```
+
+- Automatic rotation
+- Revocable
+- Scoped permissions per token
+
+**Pattern 4: Online Tokenization**
+
+Sensitive data tokenized before reaching the model:
+
+```
+User input: "My SSN is 123-45-6789"
+                ↓ (tokenizer)
+To model:   "My SSN is [TOKEN_A7X9]"
+                ↓ (model processes)
+From model: "I've noted [TOKEN_A7X9]"
+                ↓ (detokenizer, if authorized)
+To user:    "I've noted 123-45-6789"
+```
+
+- Model never sees real sensitive data
+- Detokenization only if authorized
+- Salesforce, AWS, Google publish architectures for this
+
+**Pattern 5: Tool Isolation**
+
+Don't give one agent all capabilities:
+
+```
+Agent A: Can read database (has DB creds)
+         Cannot make external requests
+
+Agent B: Can make external requests
+         Cannot access database
+
+Neither agent alone can exfiltrate DB data.
+```
+
+**Sources:**
+- [Aembit - Securing AI Agents Without Secrets](https://aembit.io/blog/securing-ai-agents-without-secrets/)
+- [HashiCorp - Vault AI Agent Identity](https://developer.hashicorp.com/validated-patterns/vault/ai-agent-identity-with-hashicorp-vault)
+- [WorkOS - Securing AI Agents](https://workos.com/blog/securing-ai-agents)
 
 ### Principle of Least Privilege
 
