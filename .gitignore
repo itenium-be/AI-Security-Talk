@@ -1,2 +1,7 @@
 _bmad
 .claude
+
+# Slidev
+presentation/node_modules/
+presentation/dist/
+presentation/.slidev/
