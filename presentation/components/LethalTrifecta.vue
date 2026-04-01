@@ -51,9 +51,14 @@
         </svg>
       </div>
 
-      <!-- Center fire -->
-      <div v-click class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/4">
-        <div class="text-6xl">🔥</div>
+      <!-- Center chaos -->
+      <div v-click class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/3">
+        <div class="relative w-32 h-24">
+          <span class="absolute top-1/2 -translate-y-1/2 text-5xl flicker" style="left: calc(50% - 30px);">🔥</span>
+          <span class="absolute left-0 top-0 text-3xl float-1">💀</span>
+          <span class="absolute right-0 top-0 text-3xl float-2">💀</span>
+          <span class="absolute bottom-0 text-4xl flicker-slow" style="left: calc(50% - 30px);">🔥</span>
+        </div>
       </div>
     </div>
   </div>
@@ -72,6 +77,51 @@
   50% {
     opacity: 1;
     stroke-width: 4;
+  }
+}
+
+.flicker {
+  animation: flicker 0.3s ease-in-out infinite alternate;
+}
+
+.flicker-slow {
+  animation: flicker 0.5s ease-in-out infinite alternate;
+}
+
+@keyframes flicker {
+  0% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+.float-1 {
+  animation: float1 2s ease-in-out infinite;
+}
+
+.float-2 {
+  animation: float2 2.5s ease-in-out infinite;
+}
+
+@keyframes float1 {
+  0%, 100% {
+    transform: translateY(0) rotate(-10deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(5deg);
+  }
+}
+
+@keyframes float2 {
+  0%, 100% {
+    transform: translateY(0) rotate(10deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(-5deg);
   }
 }
 </style>

@@ -252,35 +252,11 @@ layout: default
 </div>
 
 <!--
-**Private Data**: Emails, documents, databases, API keys
-**Untrusted Input**: PRs, Issues, Web Search
-**Exfiltration**: Web Search, Requests, Markdown Images
+**Private Data**: Emails, documents, databases, API keys  
+**Untrusted Input**: Emails, PRs, Tickets, Web Search  
+**Exfiltration**: Web Search, Requests, Markdown Images  
 -->
 
----
-layout: default
----
-
-# What?
-
-When an AI agent has **all three** simultaneously:
-
-```
-┌─────────────────────────────────────────────────────────┐
-│                  THE LETHAL TRIFECTA                    │
-├─────────────────────────────────────────────────────────┤
-│  1. ACCESS TO PRIVATE DATA                              │
-│     └─ Emails, documents, databases, API keys           │
-│                                                         │
-│  2. EXPOSURE TO UNTRUSTED CONTENT                       │
-│     └─ External emails, shared docs, web pages          │
-│                                                         │
-│  3. EXFILTRATION VECTOR                                 │
-│     └─ Can make external requests, render images        │
-└─────────────────────────────────────────────────────────┘
-
-         If your system has all three → IT'S VULNERABLE
-```
 
 ---
 layout: default
