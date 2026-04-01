@@ -247,6 +247,15 @@ layout: default
 
 <LethalTrifecta />
 
+<div v-click class="text-center text-xl text-red-400 font-bold">
+  Remove one element to break the triangle
+</div>
+
+<!--
+**Private Data**: Emails, documents, databases, API keys
+**Untrusted Input**: PRs, Issues, Web Search
+**Exfiltration**: Web Search, Requests, Markdown Images
+-->
 
 ---
 layout: default
