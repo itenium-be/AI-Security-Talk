@@ -2,7 +2,7 @@
   <div class="flex justify-center items-center -mt-5">
     <div class="relative" style="width: 700px; height: 500px;">
       <!-- Top vertex: Private Data -->
-      <div v-click class="absolute left-1/2 -translate-x-1/2 top-0 text-center">
+      <div class="absolute left-1/2 -translate-x-1/2 top-0 text-center">
         <div class="bg-white/90 backdrop-blur rounded-xl p-3 border border-gray-300 text-gray-800">
           <div class="text-4xl">🔐</div>
           <div class="font-bold mt-1 text-sm">Private Data</div>
