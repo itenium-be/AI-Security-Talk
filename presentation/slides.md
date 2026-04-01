@@ -245,6 +245,13 @@ The core security framework
 layout: default
 ---
 
+<LethalTrifecta />
+
+
+---
+layout: default
+---
+
 # What?
 
 When an AI agent has **all three** simultaneously:
