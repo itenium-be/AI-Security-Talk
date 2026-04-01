@@ -16,6 +16,7 @@ layout: agenda
 items:
   - ProbLLMs
   - The Lethal Trifecta
+  - Prompt Injection
 ---
 
 ---
@@ -292,9 +293,31 @@ layout: default
 | Untrusted Content | Filter/sanitize external inputs |
 | Exfiltration      | Block outbound requests         |
 
+<v-clicks>
+
+**Tool Isolation Pattern**:  
+
+- Agent A: Can read the database, but cannot make external requests
+- Agent B: Can make external requests, but has no database access
+
+</v-clicks>
+
 <!--
-How to give it access without giving it the token.  
-Make tokens short-lived  
+**Private Data**:  
+How to give it access without giving it the secret.  
+- Principle of least privilege: Read-only, scoped tokens  
+- Workload Identity: inject a JWT in the context that can be used to retrieve credentials
+- Just-in-Time Credentials: dynamic Vault secrets, requested on-demand, auto-expire (ex: 5min)
+- Tokenization: Sensitive data replaced with tokens before reaching the model
+
+**Filter/Sanitize**:  
+- Strip hidden characters (0px, white-on-white)
+- Suspicious patterns (ignore previous, in dev mode, ...)
+  - Zero-width spaces between "IGNORE"
+
+**Exfiltration**:  
+- Block markdown image rendering
+- Whitelist allowed domains
 -->
 
 
@@ -348,6 +371,10 @@ layout: default
 <!--
 EchoLeak: Didn't take alternative Markdown image generating ways into account.
 -->
+
+
+
+
 
 
 ---
