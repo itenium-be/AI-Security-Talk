@@ -231,8 +231,6 @@ Famously: Diane Vaughan's analysis NASA Challenger disaster (1986), killing 7
 -->
 
 
-
-
 ---
 layout: section
 ---
@@ -372,6 +370,22 @@ layout: default
 <!--
 EchoLeak: Didn't take alternative Markdown image generating ways into account.
 -->
+
+
+
+---
+layout: break
+---
+
+# ☕ Break
+
+::timer::
+
+<Timer minutes="10" />
+
+::image::
+
+![](./images/cover-art.png)
 
 
 
@@ -816,22 +830,6 @@ layout: default
 - **Embrace The Red:** embracethered.com
 - **MCP-Scan:** github.com/invariantlabs-ai/mcp-scan
 - **NeMo Guardrails:** github.com/NVIDIA/NeMo-Guardrails
-
-
-
----
-layout: break
----
-
-# ☕ Break
-
-::timer::
-
-<Timer minutes="10" />
-
-::image::
-
-![](./images/cover-art.jpg)
 
 
 ---
