@@ -87,7 +87,7 @@ size: md
 <!--
 Examples:
 - Fake cases in court filings
-- Google Bard demo "eat a rock for minerals" ($120 billion market cap loss)
+- Google Bard demo "James Webb Space Telescope first to take picture of planet outside our solar system" ($120 billion market cap loss (9%))
 - Apple Intelligence: Luigi Mangione shoots himself (instead of Brian Thompson) attributed to the BBC
 
 **AgentBench**
@@ -214,14 +214,19 @@ layout: quote
 ---
 
 
-<strong>The Normalization of Deviance</strong> (Johann Rehberger)  
+<strong class="text-xl">The Normalization of Deviance</strong> <small>(Johann Rehberger)</small>  
 
 <div class="mt-4 p-4 bg-red-900/30 rounded">
-<i>"It worked last time"</i> -- until catastrophic failure.
+Organizations lower their guard when <i>"it worked last time"</i>
 </div>
 
+<br>
+<span v-click>
+  Do not confuse the absence of successful attacks with robust security
+</span>
+
 <!--
-Famously: NASA Challenger disaster (1986), killing 7
+Famously: Diane Vaughan's analysis NASA Challenger disaster (1986), killing 7
 -->
 
 
