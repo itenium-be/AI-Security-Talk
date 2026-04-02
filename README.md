@@ -1,6 +1,9 @@
 AI Security
 ===========
 
+**The S in MCP stands for Security**
+
+
 ## Presentation
 
 ```bash
