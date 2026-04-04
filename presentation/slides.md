@@ -323,6 +323,30 @@ layout: default
 ---
 layout: default
 h1:
+  type: dot
+  color: primary
+  position: end
+---
+
+# Superhuman Email <small style="margin-left: 6px">(Jan 2026)</small>
+
+**Zero-Click Attack**
+
+<v-clicks>
+
+- Attacker sends email with hidden instructions
+- User asks AI: <i>"Summarize my inbox"</i>
+- Hidden instruction tells AI to submit data to Google Form
+- AI makes GET request to prefill: https://docs.google.com/forms/...?entry=[JWT_TOKEN]
+- Superhuman's Content Security Policy (CSP) allowed Google docs
+
+</v-clicks>
+
+
+
+---
+layout: default
+h1:
   type: braces
   color: muted
   position: all
@@ -362,29 +386,6 @@ How to give it access without giving it the secret.
 - Block markdown image rendering
 - Whitelist allowed domains
 -->
-
-
----
-layout: default
-h1:
-  type: dot
-  color: primary
-  position: end
----
-
-# Superhuman Email <small style="margin-left: 6px">(Jan 2026)</small>
-
-**Zero-Click Attack**
-
-<v-clicks>
-
-- Attacker sends email with hidden instructions
-- User asks AI: <i>"Summarize my inbox"</i>
-- Hidden instruction tells AI to submit data to Google Form
-- AI makes GET request to prefill: https://docs.google.com/forms/...?entry=[JWT_TOKEN]
-- Superhuman's Content Security Policy (CSP) allowed Google docs
-
-</v-clicks>
 
 
 ---
