@@ -74,15 +74,11 @@ From explainability & weaponization we go to our next "issue", hallucination:
 
 
 ---
-layout: default
+layout: default-aside
 size: md
 ---
 
 # Hallucinations
-
-<div class="full-width text-xxl italic text-orange-400 mb-8">
-  "AI talks about topics like a blind person about color."
-</div>
 
 <v-clicks depth="2">
 
@@ -93,6 +89,14 @@ size: md
   - LLM providers test and optimize for AgentBench
 
 </v-clicks>
+
+<div v-click class="full-width text-xxl italic text-orange-400 mt-8">
+  "AI talks about topics like a blind person about color."
+</div>
+
+::image::
+
+![](./images/parrot.png)
 
 <!--
 Examples:
@@ -595,7 +599,7 @@ Bypassing AI safety guardrails
 
 
 ---
-layout: default
+layout: default-aside
 size: sm
 ---
 
@@ -612,9 +616,14 @@ size: sm
 
 </v-clicks>
 
-<div v-click class="full-width text-xxl italic text-orange-400 mt-8">
+<div v-click class="full-width text-xxl italic text-orange-400 mt-0">
 The model wants to be helpful - attackers exploit that.
 </div>
+
+::image::
+
+![](./images/social-engineering.png)
+
 
 <!--
 Same tactics used on humans work on AI.
