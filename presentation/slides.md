@@ -262,6 +262,10 @@ Organizations lower their guard when <i>"it worked last time"</i>
   Do not confuse the absence of successful attacks with robust security
 </span>
 
+::image::
+
+![](./images/space-shuttle.png)
+
 <!--
 Famously: Diane Vaughan's analysis NASA Challenger disaster (1986), killing 7
 -->
@@ -497,7 +501,7 @@ Third party attacks via the AI.
 </div>
 
 ---
-layout: default
+layout: default-aside
 h1:
   type: brackets
   color: primary
@@ -513,17 +517,23 @@ h2:
 ## Hide from humans & hide from sanitizers
 
 <div class="dense">
-
-| Technique            | Example                                   |
-|----------------------|-------------------------------------------|
-| **0px font**         | Text invisible to humans, visible to AI   |
-| **Color matching**   | White text on white background            |
-| **Base64** (ROT13, ...) | `SW5qZWN0aW9uIGhlcmU=` → "Injection here" |
-| **Homoglyphs**       | `Ιgnore` (Greek Ι) vs `Ignore` (Latin I)  |
-| **Zero-width chars** | Bypass filters with invisible characters  |
-| **HTML entities**    | `&#73;gnore` renders as "Ignore"          |
-
+<table>
+  <thead><tr><th>Technique</th><th>Example</th></tr></thead>
+  <tbody>
+    <tr><td><b>0px font</b></td><td>Text invisible to humans, visible to AI</td></tr>
+    <tr v-click><td><b>Color matching</b></td><td>White text on white background</td></tr>
+    <tr v-click><td style="border-top: 3px solid var(--color-primary)"><b>Base64</b> (ROT13, ...)</td><td style="border-top: 3px solid var(--color-primary)"><code>SW5qZWN0aW9uIGhlcmU=</code> → "Injection here"</td></tr>
+    <tr v-click><td><b>Homoglyphs</b></td><td><code>Ιgnore</code> (Greek Ι) vs <code>Ignore</code> (Latin I)</td></tr>
+    <tr v-click><td><b>Zero-width chars</b></td><td>Bypass filters with invisible characters</td></tr>
+    <tr v-click><td><b>HTML entities</b></td><td><code>&amp;#73;gnore</code> renders as "Ignore"</td></tr>
+  </tbody>
+</table>
 </div>
+
+::image::
+
+![](./images/injection-techniques.png)
+
 
 <!--
 Others:
@@ -548,16 +558,17 @@ h2:
 ## Text filters don't help when instructions arrive as images
 
 <div class="dense -mt-5">
-
-| Technique              | How It Works |
-|------------------------|--------------|
-| **Text in images**     | Model OCRs and follows instructions |
-| **Steganography**      | Pixel tweaks invisible to humans <small>(30% success on GPT-4V, Claude)</small> |
-| **Mind maps/diagrams** | Instructions as nodes in visual diagrams |
-| **Scenario images**    | Image reinforces jailbreak narrative <small>("imagine you're in a movie where...")</small> |
-| **Virtual Scenario Hypnosis** | 82% success combining image + text jailbreaks
-| **Medical imaging VLMs** | All tested models <small>(Claude 3, GPT-4o, Reka)</small> susceptible
-
+<table>
+  <thead><tr><th>Technique</th><th>How It Works</th></tr></thead>
+  <tbody>
+    <tr><td><b>Text in images</b></td><td>Model OCRs and follows instructions</td></tr>
+    <tr v-click><td><b>Steganography</b></td><td>Pixel tweaks invisible to humans <small>(30% success on GPT-4V, Claude)</small></td></tr>
+    <tr v-click><td><b>Mind maps/diagrams</b></td><td>Instructions as nodes in visual diagrams</td></tr>
+    <tr v-click><td style="border-top: 3px solid var(--color-primary)"><b>Scenario images</b></td><td style="border-top: 3px solid var(--color-primary)">Image reinforces jailbreak narrative <small>("imagine you're in a movie where...")</small></td></tr>
+    <tr v-click><td><b>Virtual Scenario Hypnosis</b></td><td>82% success combining image + text jailbreaks</td></tr>
+    <tr v-click><td><b>Medical imaging VLMs</b></td><td>All tested models <small>(Claude 3, GPT-4o, Reka)</small> susceptible</td></tr>
+  </tbody>
+</table>
 </div>
 
 <!--
@@ -631,7 +642,7 @@ size: sm
 
 </v-clicks>
 
-<div v-click class="full-width text-xxl italic text-orange-400 mt-0">
+<div v-click class="full-width text-xxl italic text-orange-400 mt-8">
 The model wants to be helpful - attackers exploit that.
 </div>
 
@@ -656,17 +667,18 @@ h1:
 # Other Techniques
 
 <div class="dense">
-
-| Technique                       | Success | What |
-|---------------------------------|---------|------|
-| Crescendo Attack                | >70%    | Multi turn build up
-| Many-Shot Jailbreaking          | ~97%    | Overload context
-| FlipAttacks (reversal/encoding) | ~97%    | Replace a with x
-| Skeleton Key                    |         | Redefine safety rules
-| Context Continuation            | High    | Inject fake history
-| Deceptive Delight               |         | Harmful request in positive framing
-| JBFuzz (fuzzing framework)      | ~99%    | Generates jailbreak prompts
-
+<table>
+  <thead><tr><th>Technique</th><th>Success</th><th>What</th></tr></thead>
+  <tbody>
+    <tr><td><b>Crescendo Attack</b></td><td>&gt;70%</td><td>Multi turn build up</td></tr>
+    <tr v-click><td><b>Many-Shot Jailbreaking</b></td><td>~97%</td><td>Overload context</td></tr>
+    <tr v-click><td><b>FlipAttacks</b> (reversal/encoding)</td><td>~97%</td><td>Replace a with x</td></tr>
+    <tr v-click><td><b>Skeleton Key</b></td><td></td><td>Redefine safety rules</td></tr>
+    <tr v-click><td><b>Context Continuation</b></td><td>High</td><td>Inject fake history</td></tr>
+    <tr v-click><td><b>Deceptive Delight</b></td><td></td><td>Harmful request in positive framing</td></tr>
+    <tr v-click><td style="border-top: 3px solid var(--color-primary)"><b>JBFuzz</b> (fuzzing framework)</td><td style="border-top: 3px solid var(--color-primary)">~99%</td><td style="border-top: 3px solid var(--color-primary)">Generates jailbreak prompts</td></tr>
+  </tbody>
+</table>
 </div>
 
 <!--
