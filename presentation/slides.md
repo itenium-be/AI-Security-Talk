@@ -386,7 +386,7 @@ layout: break
 
 ::timer::
 
-<Timer minutes="10" />
+<Timer minutes="5" />
 
 ::image::
 
