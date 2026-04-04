@@ -37,6 +37,10 @@ It's not like security is the only problem
 
 ---
 layout: default
+h1:
+  type: hash
+  color: muted
+  position: start
 ---
 
 # ProbLLMs
@@ -104,6 +108,10 @@ Early success rates (2023-2024). 2026: 60%-70% (Benchmaxxing)
 
 ---
 layout: default
+h1:
+  type: brackets
+  color: primary
+  position: 3-4
 ---
 
 # Deepfakes & Voice Cloning
@@ -151,6 +159,10 @@ The Hall of Shame
 
 ---
 layout: default
+h1:
+  type: slashes
+  color: muted
+  position: end
 ---
 
 # Chatbot Disasters
@@ -287,6 +299,10 @@ layout: default
 
 ---
 layout: default
+h1:
+  type: braces
+  color: muted
+  position: all
 ---
 
 # The Triangle of Fire
@@ -327,9 +343,13 @@ How to give it access without giving it the secret.
 
 ---
 layout: default
+h1:
+  type: dot
+  color: primary
+  position: end
 ---
 
-# Superhuman Email <small>(Jan 2026)</small>
+# Superhuman Email <small style="margin-left: 6px">(Jan 2026)</small>
 
 **Zero-Click Attack**
 
@@ -459,6 +479,14 @@ Third party attacks via the AI.
 
 ---
 layout: default
+h1:
+  type: brackets
+  color: primary
+  position: all
+h2:
+  type: dot
+  color: muted
+  position: end
 ---
 
 # Injection Techniques
@@ -486,6 +514,14 @@ Others:
 
 ---
 layout: default
+h1:
+  type: hash
+  color: primary
+  position: start
+h2:
+  type: semicolon
+  color: muted
+  position: end
 ---
 
 # Multimodal Attacks
@@ -587,6 +623,10 @@ Same tactics used on humans work on AI.
 
 ---
 layout: default
+h1:
+  type: slashes
+  color: primary
+  position: end
 ---
 
 # Other Techniques
@@ -699,6 +739,14 @@ Plug & Pray
 
 ---
 layout: default
+h1:
+  type: braces
+  color: primary
+  position: 2-3
+h2:
+  type: slashes
+  color: muted
+  position: end
 ---
 
 # Model Context Protocol <small>(MCP)</small>
@@ -783,6 +831,10 @@ layout: default
 
 ---
 layout: default
+h1:
+  type: dot
+  color: muted
+  position: end
 ---
 
 # Claude Code CVEs
@@ -815,7 +867,7 @@ Clone a repo → immediate code execution. No approval.
 </v-click>
 
 ---
-layout: quote-alt
+layout: statement
 ---
 
 The LLM vendors are not going to save us! We need to avoid the lethal trifecta combination of tools ourselves.
