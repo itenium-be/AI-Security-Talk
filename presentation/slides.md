@@ -838,6 +838,38 @@ Malicious instructions hidden in tool descriptions (5% of open source MCPs):
 </v-clicks>
 
 ---
+layout: default-aside
+h1:
+  type: hash
+  color: primary
+  position: start
+---
+
+# Scan Your MCP Servers
+
+```bash
+uvx mcp-scan@latest
+```
+
+<v-clicks>
+
+- Auto-discovers Claude, Cursor & Windsurf configs
+- Detects tool poisoning, prompt injections, rug pulls
+- Also available as runtime proxy: `mcp-scan proxy`
+
+</v-clicks>
+
+::image::
+
+![](./images/mcp-scan.png)
+
+<!--
+Uses uv package manager (Python).
+Passive scan + active proxy mode for real-time monitoring.
+github.com/invariantlabs-ai/mcp-scan
+-->
+
+---
 layout: default
 ---
 
