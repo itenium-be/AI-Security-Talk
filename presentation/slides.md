@@ -1,7 +1,12 @@
 ---
 theme: ./theme
 title: AI Security
+subTitle: The S in MCP stands for Security
 transition: fade
+session-time: 60min
+track: AI
+type: Theoretical
+first: 2026-04-01
 ---
 
 # AI Security
@@ -401,7 +406,7 @@ OWASP LLM01:2025 - The #1 vulnerability
 
 
 ---
-layout: quote-alt
+layout: statement
 ---
 
 Prompt Injection may simply be an inherent issue with LLM technology.
