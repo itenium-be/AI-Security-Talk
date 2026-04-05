@@ -397,10 +397,46 @@ h1:
 - Attacker sends email with hidden instructions
 - User asks AI: <i>"Summarize my inbox"</i>
 - Hidden instruction tells AI to submit data to Google Form
-- AI makes GET request to prefill: https://docs.google.com/forms/...?entry=[JWT_TOKEN]
+- AI makes GET request to prefill: `https://docs.google.com/forms/...?entry=[JWT]`
 - Superhuman's Content Security Policy (CSP) allowed Google docs
 
 </v-clicks>
+
+
+
+---
+layout: default
+disabled: false
+h2:
+  type: brackets
+  color: muted
+  position: all
+---
+
+# Vendor Defenses
+## A game of cat and mouse
+
+<VClickTable
+  :headers="['Defense', 'Approach', 'Solves it?']"
+  :rows="[
+    ['<b>Constitutional AI</b> <small>(Anthropic)</small>', 'Train model to self-critique against principles', 'No — adversarial prompts bypass learned refusals'],
+    ['<b>Instruction Hierarchy</b> <small>(Google)</small>', 'Privilege tiers: system > user > tool output', 'No — learned heuristic, not a hard boundary'],
+    ['<b>Prompt Shields</b> <small>(Azure)</small>', 'Runtime classifier scanning for injection patterns', 'No — pattern matching, same cat-and-mouse as any blocklist'],
+  ]"
+  size="sm"
+/>
+
+<div v-click="3" class="text-2xl text-orange-400 italic mt-8 text-center">
+All probabilistic. None solve instruction/data separation.
+</div>
+
+<!--
+Constitutional AI: RLHF with AI-generated feedback. Baked into model weights at training time.
+Instruction Hierarchy: Model should ignore injections in lower-privilege tiers (tool output, retrieved docs). Clever injections can spoof tiers.
+Prompt Shields: Same category as Meta Prompt Guard. Adds latency, false positives on security discussions.
+These are the equivalent of spam filters, not parameterized queries.
+-->
+
 
 
 
@@ -420,18 +456,17 @@ h1:
 | Untrusted Content | Filter/sanitize external inputs |
 | Exfiltration      | Block outbound requests         |
 
-<div v-clicks class="mt-5">
+<div v-click="1" class="mt-5">
 
-**Tool Isolation Pattern**:  
+**Tool Isolation Pattern**:
 
-<div class="text-2xl">
-
-- Agent A: Can read the database, but cannot make external requests
-- Agent B: Can make external requests, but has no database access
-
-</div>
+<ul class="text-2xl">
+  <li v-click="2">Agent A: Can read the database, but cannot make external requests</li>
+  <li v-click="3">Agent B: Can make external requests, but has no database access</li>
+</ul>
 
 </div>
+
 
 <!--
 **Private Data**:  
@@ -449,36 +484,6 @@ How to give it access without giving it the secret.
 **Exfiltration**:  
 - Block markdown image rendering
 - Whitelist allowed domains
--->
-
-
-
----
-layout: default
-disabled: true
----
-
-# Vendor Defenses
-
-<div class="dense">
-
-| Defense | Approach | Solves it? |
-|---------|----------|-----------|
-| **Constitutional AI** <small>(Anthropic)</small> | Train model to self-critique against principles | No — adversarial prompts bypass learned refusals |
-| **Instruction Hierarchy** <small>(Google)</small> | Privilege tiers: system > user > tool output | No — learned heuristic, not a hard boundary |
-| **Prompt Shields** <small>(Azure)</small> | Runtime classifier scanning for injection patterns | No — pattern matching, same cat-and-mouse as any blocklist |
-
-</div>
-
-<div v-click class="text-xl text-orange-400 italic mt-8">
-All probabilistic. None solve instruction/data separation.
-</div>
-
-<!--
-Constitutional AI: RLHF with AI-generated feedback. Baked into model weights at training time.
-Instruction Hierarchy: Model should ignore injections in lower-privilege tiers (tool output, retrieved docs). Clever injections can spoof tiers.
-Prompt Shields: Same category as Meta Prompt Guard. Adds latency, false positives on security discussions.
-These are the equivalent of spam filters, not parameterized queries.
 -->
 
 
@@ -613,19 +618,19 @@ h2:
 
 ## Hide from humans & hide from sanitizers
 
-<div class="dense">
-<table>
-  <thead><tr><th>Technique</th><th>Example</th></tr></thead>
-  <tbody>
-    <tr><td><b>0px font</b></td><td>Text invisible to humans, visible to AI</td></tr>
-    <tr v-click><td><b>Color matching</b></td><td>White text on white background</td></tr>
-    <tr v-click><td style="border-top: 3px solid var(--color-primary)"><b>Base64</b> (ROT13, ...)</td><td style="border-top: 3px solid var(--color-primary)"><code>SW5qZWN0aW9uIGhlcmU=</code> → "Injection here"</td></tr>
-    <tr v-click><td><b>Homoglyphs</b></td><td><code>Ιgnore</code> (Greek Ι) vs <code>Ignore</code> (Latin I)</td></tr>
-    <tr v-click><td><b>Zero-width chars</b></td><td>Bypass filters with invisible characters</td></tr>
-    <tr v-click><td><b>HTML entities</b></td><td><code>&amp;#73;gnore</code> renders as "Ignore"</td></tr>
-  </tbody>
-</table>
-</div>
+<VClickTable
+  :headers="['Technique', 'Example']"
+  :rows="[
+    ['<b>0px font</b>', 'Text invisible to humans, visible to AI'],
+    ['<b>Color matching</b>', 'White text on white background'],
+    ['<b>Base64</b> (ROT13, ...)', '<code>SW5qZWN0aW9uIGhlcmU=</code> → &quot;Injection here&quot;'],
+    ['<b>Homoglyphs</b>', '<code>Ιgnore</code> (Greek Ι) vs <code>Ignore</code> (Latin I)'],
+    ['<b>Zero-width chars</b>', 'Bypass filters with invisible characters'],
+    ['<b>HTML entities</b>', '<code>&amp;amp;#73;gnore</code> renders as &quot;Ignore&quot;'],
+  ]"
+  size="sm"
+  :separatorBefore="[2]"
+/>
 
 ::image::
 
@@ -654,19 +659,20 @@ h2:
 
 ## Text filters don't help when instructions arrive as images
 
-<div class="dense -mt-5">
-<table>
-  <thead><tr><th>Technique</th><th>How It Works</th></tr></thead>
-  <tbody>
-    <tr><td><b>Text in images</b></td><td>Model OCRs and follows instructions</td></tr>
-    <tr v-click><td><b>Steganography</b></td><td>Pixel tweaks invisible to humans <small>(30% success on GPT-4V, Claude)</small></td></tr>
-    <tr v-click><td><b>Mind maps/diagrams</b></td><td>Instructions as nodes in visual diagrams</td></tr>
-    <tr v-click><td style="border-top: 3px solid var(--color-primary)"><b>Scenario images</b></td><td style="border-top: 3px solid var(--color-primary)">Image reinforces jailbreak narrative <small>("imagine you're in a movie where...")</small></td></tr>
-    <tr v-click><td><b>Virtual Scenario Hypnosis</b></td><td>82% success combining image + text jailbreaks</td></tr>
-    <tr v-click><td><b>Medical imaging VLMs</b></td><td>All tested models <small>(Claude 3, GPT-4o, Reka)</small> susceptible</td></tr>
-  </tbody>
-</table>
-</div>
+<VClickTable
+  :headers="['Technique', 'How It Works']"
+  :rows="[
+    ['<b>Text in images</b>', 'Model OCRs and follows instructions'],
+    ['<b>Steganography</b>', 'Pixel tweaks invisible to humans <small>(30% success on GPT-4V, Claude)</small>'],
+    ['<b>Mind maps/diagrams</b>', 'Instructions as nodes in visual diagrams'],
+    ['<b>Scenario images</b>', 'Image reinforces jailbreak narrative <small>&quot;imagine you are in a movie where...&quot;)</small>'],
+    ['<b>Virtual Scenario Hypnosis</b>', '82% success combining image + text jailbreaks'],
+    ['<b>Medical imaging VLMs</b>', 'All tested models <small>(Claude 3, GPT-4o, Reka)</small> susceptible'],
+  ]"
+  size="sm"
+  :separatorBefore="[3]"
+  class="-mt-5"
+/>
 
 <!--
 VLM: Vision-Language Model
@@ -763,20 +769,20 @@ h1:
 
 # Other Techniques
 
-<div class="dense">
-<table>
-  <thead><tr><th>Technique</th><th>Success</th><th>What</th></tr></thead>
-  <tbody>
-    <tr><td><b>Crescendo Attack</b></td><td>&gt;70%</td><td>Multi turn build up</td></tr>
-    <tr v-click><td><b>Many-Shot Jailbreaking</b></td><td>~97%</td><td>Overload context</td></tr>
-    <tr v-click><td><b>FlipAttacks</b> (reversal/encoding)</td><td>~97%</td><td>Replace a with x</td></tr>
-    <tr v-click><td><b>Skeleton Key</b></td><td></td><td>Redefine safety rules</td></tr>
-    <tr v-click><td><b>Context Continuation</b></td><td>High</td><td>Inject fake history</td></tr>
-    <tr v-click><td><b>Deceptive Delight</b></td><td></td><td>Harmful request in positive framing</td></tr>
-    <tr v-click><td style="border-top: 3px solid var(--color-primary)"><b>JBFuzz</b> (fuzzing framework)</td><td style="border-top: 3px solid var(--color-primary)">~99%</td><td style="border-top: 3px solid var(--color-primary)">Generates jailbreak prompts</td></tr>
-  </tbody>
-</table>
-</div>
+<VClickTable
+  :headers="['Technique', 'Success', 'What']"
+  :rows="[
+    ['<b>Crescendo Attack</b>', '&gt;70%', 'Multi turn build up'],
+    ['<b>Many-Shot Jailbreaking</b>', '~97%', 'Overload context'],
+    ['<b>FlipAttacks</b> (reversal/encoding)', '~97%', 'Replace a with x'],
+    ['<b>Skeleton Key</b>', '', 'Redefine safety rules'],
+    ['<b>Context Continuation</b>', 'High', 'Inject fake history'],
+    ['<b>Deceptive Delight</b>', '', 'Harmful request in positive framing'],
+    ['<b>JBFuzz</b> (fuzzing framework)', '~99%', 'Generates jailbreak prompts'],
+  ]"
+  size="sm"
+  :separatorBefore="[6]"
+/>
 
 <!--
 **Crescendo Attack (MS 2024)**:  
