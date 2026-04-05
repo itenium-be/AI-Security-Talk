@@ -80,7 +80,7 @@ From explainability & weaponization we go to our next "issue", hallucination:
 
 ---
 layout: default-aside
-size: md
+textSize: md
 ---
 
 # Hallucinations
@@ -729,7 +729,7 @@ Bypassing AI safety guardrails
 
 ---
 layout: default-aside
-size: sm
+textSize: sm
 ---
 
 # Social Engineering the AI
