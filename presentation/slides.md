@@ -680,7 +680,7 @@ VLM: Vision-Language Model
 
 
 ---
-layout: default
+layout: default-aside
 ---
 
 # GitHub Copilot RCE <small>(CVE-2025-53773)</small>
@@ -695,6 +695,9 @@ layout: default
 
 </v-clicks>
 
+::image::
+
+![](./images/copilot-rce.png)
 
 ---
 layout: default
