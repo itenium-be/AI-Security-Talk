@@ -515,6 +515,7 @@ EchoLeak: Didn't take alternative Markdown image generating ways into account.
 
 ---
 layout: break
+disabled: true
 ---
 
 # ☕ Break
