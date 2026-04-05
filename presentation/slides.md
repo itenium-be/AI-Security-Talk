@@ -179,9 +179,11 @@ I asked Claude to help clone our CEOs voice.
 <b>30-second jailbreak. Zero technical skill. Just context manipulation.</b>
 </div>
 
-<audio v-click controls class="mt-12 text-center">
+<div v-click class="mt-12 flex justify-center">
+<audio controls>
   <source src="./images/raise-for-wouter.mp3" type="audio/mpeg">
 </audio>
+</div>
 
 <!--
 Clips created with: https://noiz.ai/
