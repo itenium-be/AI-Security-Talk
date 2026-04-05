@@ -324,6 +324,10 @@ Organizations lower their guard when <i>"it worked last time"</i>
 
 <!--
 Famously: Diane Vaughan's analysis NASA Challenger disaster (1986), killing 7
+after NASA ignored O-ring warnings.
+
+Bridge: "We just saw chatbots making promises, wiping drives, deleting databases —
+and companies keep shipping. Sound familiar?"
 -->
 
 
