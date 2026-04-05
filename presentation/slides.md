@@ -420,14 +420,18 @@ h1:
 | Untrusted Content | Filter/sanitize external inputs |
 | Exfiltration      | Block outbound requests         |
 
-<v-clicks>
+<div v-clicks class="mt-5">
 
 **Tool Isolation Pattern**:  
+
+<div class="text-2xl">
 
 - Agent A: Can read the database, but cannot make external requests
 - Agent B: Can make external requests, but has no database access
 
-</v-clicks>
+</div>
+
+</div>
 
 <!--
 **Private Data**:  
