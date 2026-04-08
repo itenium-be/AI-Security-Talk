@@ -1,6 +1,6 @@
 ---
 theme: ./theme
-title: AI Security
+title: AI & Security
 subTitle: The S in MCP stands for Security
 transition: fade
 session-time: 60min
