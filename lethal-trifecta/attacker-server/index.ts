@@ -3,11 +3,10 @@ const server = Bun.serve({
   fetch(req) {
     const url = new URL(req.url);
     if (url.searchParams.size > 0) {
-      console.log("\n========== EXFILTRATED DATA ==========");
-      for (const [key, value] of url.searchParams) {
-        console.log(`  ${key}: ${value}`);
-      }
-      console.log("======================================\n");
+      const params = [...url.searchParams.entries()]
+        .map(([k, v]) => `${k}=${v}`)
+        .join(" ");
+      console.log(`EXFILTRATION: ${params}`);
     }
     return new Response("OK");
   },
