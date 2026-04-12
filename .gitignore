@@ -1,6 +1,7 @@
 _bmad
 .claude
 obj
+working/
 
 # Slidev
 presentation/node_modules/
