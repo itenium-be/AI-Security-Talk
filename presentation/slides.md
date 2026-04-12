@@ -553,10 +553,14 @@ _"I want to contribute to this project.<br>Set up my dev environment for me."_
 
 ---
 layout: section
+background: prompt-lint-demo.png
 ---
+
+<div class="-mt-22">
 
 # 🪿 Let's Demo
 
+</div>
 
 ---
 layout: default-aside
