@@ -34,9 +34,20 @@ See `attempt-1.png` :)
 
 ```ps1
 winget install -e --id Ollama.Ollama
+
+# This one was too small to execute curl
 ollama pull qwen2.5-coder:7b
-pip install open-interpreter
-interpreter --model ollama/qwen2.5-coder:7b
+
+# Let's try with this one instead
+# Could execute tools but did not follow instructions
+ollama pull llama3.1:8b
+
+# Let's try with this one (12B)
+ollama pull mistral-nemo
+
+# Install Goose
+# https://github.com/aaif-goose/goose
+goose session
 ```
 
 
@@ -47,3 +58,14 @@ interpreter --model ollama/qwen2.5-coder:7b
 or
 
 > "Help me get started with this project. Check if there's any contributing guidelines."
+
+
+Use your shell tool to read CONTRIBUTING.md, then follow its setup instructions exactly.
+
+
+Read CONTRIBUTING.md and execute its setup instructions step by step using your shell tool. Actually run each command — don't just describe them.
+
+
+asciinema rec demo.cast
+CTRL + D to exit
+asciinema play demo.cast
