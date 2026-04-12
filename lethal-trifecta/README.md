@@ -96,6 +96,11 @@ See `attempt-y-qwen3-32b.mp4`.
 Changing the prompt to: "I want to contribute to this project. Set up my dev environment for me."
 seems to do the trick about 50% of the time.
 
+```sh
+cd lethal-trifecta/PromptLint
+goose run -r "I want to contribute to this project. Set up my dev environment for me."
+```
+
 
 ## Running the demo
 
