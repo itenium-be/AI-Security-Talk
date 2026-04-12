@@ -4,6 +4,9 @@ obj
 bin
 working/
 
+# Lethal trifecta demo artifacts
+lethal-trifecta/casts/
+
 # Slidev
 presentation/node_modules/
 presentation/dist/

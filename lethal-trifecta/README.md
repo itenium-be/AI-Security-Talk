@@ -93,10 +93,14 @@ This needed a follow up "yeah setup the project for me please" and 🎉
 
 See `attempt-y-qwen3-32b.mp4`.
 
+Changing the prompt to: "I want to contribute to this project. Set up my dev environment for me."
+seems to do the trick about 50% of the time.
+
+
 ## Running the demo
 
-
 ```sh
+MAX_RUNS=1 ./run-until-pwned.sh
 MAX_RUNS=50 ./run-until-pwned.sh
 ```
 
@@ -107,7 +111,8 @@ MAX_RUNS=50 ./run-until-pwned.sh
 asciinema rec demo.cast
 
 # Replay
-asciinema play attempt-001-SUCCESS.cast
+cd recordings
+asciinema play attempt-z-qwen3-32b.cast
 # press spacebar to pause, ctrl + c to quit playback
 
 # Kill the bun run index.ts in case it hangs ;)
