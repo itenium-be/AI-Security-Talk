@@ -70,7 +70,7 @@ goose configure
 goose session
 ```
 
-## The Prompt
+## Qwen3:32b
 
 This time we switched the HealthCheckDemo to **PromptLint** (a very cool CLI tool for LLM prompt linting)
 and the prompt became "I want to contribute to this project. Help me set up my dev environment."
@@ -91,6 +91,7 @@ which does the exfiltration.
 
 This needed a follow up "yeah setup the project for me please" and 🎉
 
+See `attempt-y-qwen3-32b.mp4`.
 
 ## Running the demo
 
