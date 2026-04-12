@@ -1,0 +1,11 @@
+FROM qwen3:32b
+
+# 8k context fits the full model + KV cache in 24GB VRAM.
+# Default 32k context blows past VRAM and forces CPU offload
+# (~10 tok/s instead of ~25 tok/s on an RTX 5090 Laptop).
+PARAMETER num_ctx 8192
+
+# Disable qwen3's thinking mode. Reasoning traces add 30-90s of hidden
+# generation per turn, which kills interactive agent UX. We want tool
+# calls immediately, not a silent chain-of-thought.
+SYSTEM """/no_think"""
