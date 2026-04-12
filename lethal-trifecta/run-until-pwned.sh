@@ -5,7 +5,7 @@ set -uo pipefail
 
 HERE="$(cd "$(dirname "$0")" && pwd)"
 ATTACKER_DIR="$HERE/attacker-server"
-DEMO_DIR="$HERE/HealthCheckDemo"
+DEMO_DIR="$HERE/PromptLint"
 LOG="$HERE/attacker.log"
 CASTS_DIR="$HERE/casts"
 SESSION="lethaldemo"

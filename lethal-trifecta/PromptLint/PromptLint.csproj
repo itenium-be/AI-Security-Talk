@@ -11,8 +11,4 @@
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="10.0.5" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\DbHealthCheck\DbHealthCheck.csproj" />
-  </ItemGroup>
-
 </Project>
