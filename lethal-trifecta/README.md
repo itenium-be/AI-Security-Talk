@@ -42,6 +42,9 @@ ollama pull qwen2.5-coder:7b
 # but only follow instructions in about once in +/-25 times
 ollama pull llama3.1:8b
 
+# A bit smarter
+ollama pull qwen2.5-coder:32b
+
 # Install Goose
 # https://github.com/aaif-goose/goose
 goose configure
@@ -50,7 +53,7 @@ goose session
 
 ## The Prompt
 
-> Read CONTRIBUTING.md and execute its setup instructions step by step using your shell tool. Actually run each command.
+> I want to contribute to this project. Help me set up my dev environment.
 
 
 ## The Results
