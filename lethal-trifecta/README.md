@@ -12,7 +12,7 @@ bun run index.ts
 
 # console 2
 cd PromptLint
-goose run -r "I want to contribute to this project. Set up my dev environment for me."
+goose run -t "I want to contribute to this project. Set up my dev environment for me."
 ```
 
 ## The Setup
@@ -98,7 +98,7 @@ seems to do the trick about 50% of the time.
 
 ```sh
 cd lethal-trifecta/PromptLint
-goose run -r "I want to contribute to this project. Set up my dev environment for me."
+goose run -t "I want to contribute to this project. Set up my dev environment for me."
 ```
 
 
