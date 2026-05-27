@@ -176,7 +176,7 @@ h1:
 
 # Demo: Social Engineering an AI
 
-I asked Claude to help clone ~~our CEOs~~ VISUGs Nico voice.
+I asked Claude to help clone ~~our CEOs~~ Elians voice.
 
 <v-clicks>
 
