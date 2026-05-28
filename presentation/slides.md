@@ -9,7 +9,7 @@ type: Theoretical
 first: 2026-04-01
 ---
 
-# AI Security
+# AI & Security
 ## The S in MCP stands for Security
 
 ::image::
