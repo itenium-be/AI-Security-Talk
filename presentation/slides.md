@@ -24,6 +24,38 @@ And I have never written more code than in those last 6 months.
 -->
 
 ---
+layout: default
+---
+
+# itenium
+## AI Track 2026
+
+<div v-click class="full-width text-xxl italic text-orange-400 mb-2">
+  Previously we had a Testing Track, Architecture Track, ...
+  <br>But this year, our CEO decided we needed more... AI :D
+</div>
+
+<div v-click class="dense">
+
+| Date       | Session                                              |
+|------------|------------------------------------------------------|
+| 13 Mar     | SkillForge Vibe Coding Bootcamp                      |
+| **1 Apr**  | **AI & Security** — *THIS TALK*                      |
+| 11 May     | Agentic Engineering                                  |
+| 1 Jul      | MCP, Skills & Extending Your Agent                   |
+| 1 Oct      | MCP Servers: Is This How Skynet Started?             |
+| 25 Nov     | Predicting Mental Fatigue Using AI                   |
+| 9 Dev      | The Math Behind The AI Curtain                       |
+
+</div>
+
+<!--
+Quick context before diving in.
+itenium is an IT consultancy based in Mechelen.
+This talk is one in a year-long internal series — the AI Track 2026.
+-->
+
+---
 layout: agenda
 items:
   - ProbLLMs
