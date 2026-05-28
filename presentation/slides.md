@@ -7,6 +7,7 @@ session-time: 60min
 track: AI
 type: Theoretical
 first: 2026-04-01
+aspectRatio: 16/9
 ---
 
 # AI & Security
