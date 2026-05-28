@@ -225,7 +225,7 @@ I asked Claude to help clone ~~our CEOs~~ Elians voice.
 
 <div v-click class="mt-12 flex justify-center">
 <audio controls>
-  <source src="./images/JavaIsPrettyDecent.mp3" type="audio/mpeg">
+  <source src="./images/react-bricks-angular.mp3" type="audio/mpeg">
 </audio>
 </div>
 
